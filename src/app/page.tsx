@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CartButton } from "@/components/cart/CartButton";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function Home() {
   const products = [
@@ -51,52 +51,7 @@ export default function Home() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-slate-900/10 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-          <a href="#" className="group inline-flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white ring-1 ring-slate-900/10">
-              <span className="h-4 w-4 rounded-sm bg-gradient-to-br from-[#62a6ff] to-[#57f0ff]" />
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-slate-900">
-              Moja Maison
-            </span>
-          </a>
-
-          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-            <a className="transition hover:text-slate-900" href="#">
-              Home
-            </a>
-            <a className="transition hover:text-slate-900" href="/shop">
-              Shop
-            </a>
-            <a className="transition hover:text-slate-900" href="/about">
-              About
-            </a>
-            <a className="transition hover:text-slate-900" href="/faq">
-              FAQ
-            </a>
-            <a className="transition hover:text-slate-900" href="#contact">
-              Contact
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <a
-              href="#"
-              className="hidden rounded-full border border-slate-900/10 bg-white/60 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-white sm:inline-flex"
-            >
-              Login
-            </a>
-            <CartButton className="hidden sm:inline-flex relative items-center justify-center rounded-full border border-slate-900/10 bg-white/60 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white" />
-            <a
-              href="#shop"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#62a6ff] to-[#57f0ff] px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_32px_rgba(98,166,255,0.22)] transition hover:brightness-110"
-            >
-              Order now
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="flex-1">
         <section className="mx-auto max-w-6xl px-4 pt-14 pb-10 sm:pt-20">

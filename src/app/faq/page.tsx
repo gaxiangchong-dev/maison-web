@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CartButton } from "@/components/cart/CartButton";
+import { SiteHeader } from "@/components/SiteHeader";
 
 type FaqItem = {
   q: string;
@@ -133,50 +133,7 @@ export default function FaqPage() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-slate-900/10 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-          <Link href="/" className="group inline-flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white ring-1 ring-slate-900/10">
-              <span className="h-4 w-4 rounded-sm bg-gradient-to-br from-[#62a6ff] to-[#57f0ff]" />
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-slate-900">
-              Moja Maison
-            </span>
-          </Link>
-
-          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-            <Link className="transition hover:text-slate-900" href="/">
-              Home
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/shop">
-              Shop
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/about">
-              About
-            </Link>
-            <Link
-              className="font-semibold text-slate-900"
-              href="/faq"
-              aria-current="page"
-            >
-              FAQ
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/#contact">
-              Contact
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <CartButton className="hidden sm:inline-flex relative items-center justify-center rounded-full border border-slate-900/10 bg-white/60 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white" />
-            <Link
-              href="/shop"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#62a6ff] to-[#57f0ff] px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_32px_rgba(98,166,255,0.22)] transition hover:brightness-110"
-            >
-              Order now
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="mx-auto max-w-6xl px-4 py-10">
         <div className="rounded-3xl border border-slate-900/10 bg-white/70 p-6 sm:p-8">

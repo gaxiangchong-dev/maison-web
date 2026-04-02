@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { CartButton } from "@/components/cart/CartButton";
+import Image from "next/image";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export default function AboutPage() {
   return (
@@ -12,66 +13,69 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-20 border-b border-slate-900/10 bg-white/70 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4">
-          <Link href="/" className="group inline-flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-white ring-1 ring-slate-900/10">
-              <span className="h-4 w-4 rounded-sm bg-gradient-to-br from-[#62a6ff] to-[#57f0ff]" />
-            </span>
-            <span className="text-sm font-semibold tracking-wide text-slate-900">
-              Moja Maison
-            </span>
-          </Link>
-
-          <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
-            <Link className="transition hover:text-slate-900" href="/">
-              Home
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/shop">
-              Shop
-            </Link>
-            <Link
-              className="font-semibold text-slate-900"
-              href="/about"
-              aria-current="page"
-            >
-              About
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/faq">
-              FAQ
-            </Link>
-            <Link className="transition hover:text-slate-900" href="/#contact">
-              Contact
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <CartButton className="hidden sm:inline-flex relative items-center justify-center rounded-full border border-slate-900/10 bg-white/60 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-white" />
-            <Link
-              href="/shop"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#62a6ff] to-[#57f0ff] px-4 py-2 text-sm font-semibold text-slate-900 shadow-[0_12px_32px_rgba(98,166,255,0.22)] transition hover:brightness-110"
-            >
-              Order now
-            </Link>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="mx-auto max-w-6xl px-4 py-10">
-        <section className="rounded-3xl border border-slate-900/10 bg-white/70 p-6 sm:p-10">
-          <div className="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/70 px-3 py-1 text-xs text-slate-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#57f0ff]" />
-            Our story • Our craft • Your celebrations
+        <section className="grid gap-6 lg:grid-cols-12 lg:items-stretch">
+          <div className="lg:col-span-7 rounded-3xl border border-slate-900/10 bg-white/70 p-6 sm:p-10">
+            <div className="inline-flex items-center gap-2 rounded-full border border-slate-900/10 bg-white/70 px-3 py-1 text-xs text-slate-600">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#57f0ff]" />
+              Our story • Our craft • Your celebrations
+            </div>
+            <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
+              Craft nice cake for every happiness moment.
+            </h1>
+            <p className="mt-4 max-w-3xl text-pretty text-sm leading-7 text-slate-600 sm:text-base">
+              Moja Maison is built on a simple belief: the best cakes don’t just
+              taste good — they help people celebrate. Whether it’s a birthday,
+              a small win, a reunion, or a “just because” gift, we want every
+              box to carry a little more joy.
+            </p>
           </div>
-          <h1 className="mt-4 text-balance text-3xl font-semibold tracking-tight text-slate-900 sm:text-5xl">
-            Craft nice cake for every happiness moment.
-          </h1>
-          <p className="mt-4 max-w-3xl text-pretty text-sm leading-7 text-slate-600 sm:text-base">
-            Moja Maison is built on a simple belief: the best cakes don’t just
-            taste good — they help people celebrate. Whether it’s a birthday,
-            a small win, a reunion, or a “just because” gift, we want every box
-            to carry a little more joy.
-          </p>
+
+          <div className="lg:col-span-5">
+            <div className="relative h-full min-h-64 overflow-hidden rounded-3xl border border-slate-900/10 bg-white/70">
+              <Image
+                src="/images/demo/about/bakery-counter.jpg"
+                alt="Bakery counter"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 420px, 100vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/70 via-white/0 to-white/0" />
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-6 grid gap-4 sm:grid-cols-3">
+          {[
+            {
+              src: "/images/demo/about/cake-display.jpg",
+              alt: "Cake display",
+            },
+            {
+              src: "/images/demo/about/hands-cake-slices.jpg",
+              alt: "Hands holding cake slices",
+            },
+            {
+              src: "/images/demo/about/cake-display.jpg",
+              alt: "Bakery cakes",
+            },
+          ].map((img) => (
+            <div
+              key={img.alt}
+              className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-slate-900/10 bg-white/70"
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 360px, (min-width: 640px) 33vw, 100vw"
+              />
+            </div>
+          ))}
         </section>
 
         <section className="mt-10 grid gap-4 lg:grid-cols-12">
